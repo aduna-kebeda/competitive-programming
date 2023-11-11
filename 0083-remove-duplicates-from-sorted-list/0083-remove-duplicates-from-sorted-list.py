@@ -5,22 +5,22 @@
 #         self.next = next
 class Solution(object):
     def deleteDuplicates(self, head):
-        temp1 = head
-        lst = []
+       
+       stack=[]
+       if head is None or head.next is None:
+        return head
+       temp=head
+       
+       while temp:
+           if temp.val not in stack:
+               stack.append(temp.val)
+               temp2=temp
+           else:
+               temp2.next=temp.next
+               
+
+           
+           temp=temp.next
+       return head
+
         
-        while temp1:
-            lst.append(temp1.val)
-            temp1 = temp1.next
-        
-        lst = list(set(lst))
-        lst.sort()
-        
-        if lst:
-            new_head = ListNode(lst[0])
-            temp2 = new_head
-            for val in lst[1:]:
-                temp2.next = ListNode(val)
-                temp2 = temp2.next
-            return new_head
-        else:
-            return None
