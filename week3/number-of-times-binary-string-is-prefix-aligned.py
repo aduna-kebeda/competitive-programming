@@ -5,11 +5,8 @@ class Solution(object):
         maxi=1
         lst=[0]*len(flips)
         for i in range(len(flips)):
-            lst[flips[i]-1]=1
-            while pointer<len(flips) and lst[pointer]!=0:
-                pointer+=1
             maxi=max(flips[i], maxi)
-            if pointer>=maxi:
+            if i>=maxi-1:
                 cnt+=1
         return cnt
 
