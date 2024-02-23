@@ -1,10 +1,8 @@
-from typing import List
-
 class Solution:
     def triangleNumber(self, nums: List[int]) -> int:
         nums.sort()
         cnt = 0
-        for r in range(2, len(nums)):
+        for r in range(len(nums) - 1, 1, -1):
             l = 0
             j = r - 1
             while l < j:
